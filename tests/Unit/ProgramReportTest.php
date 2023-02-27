@@ -44,7 +44,7 @@ class ProgramReportTestTest extends TestCase
     public function test_can_create_programreport()
     {
         // Login the user first.
-        Auth::login(User::where('email', 'admin@example.com')->first());
+        Auth::login(User::where('email', 'secuna.admin@example.com')->first());
         $programRepository = new ProgramReportRepository();
 
         // First count total number of programs

@@ -42,7 +42,7 @@ class ProgramTest extends TestCase
     public function test_can_create_program()
     {
         // Login the user first.
-        Auth::login(User::where('email', 'admin@example.com')->first());
+        Auth::login(User::where('email', 'secuna.admin@example.com')->first());
         $programRepository = new ProgramRepository();
 
         // First count total number of programs
@@ -52,6 +52,8 @@ class ProgramTest extends TestCase
             'title'       => 'Hello',
             'user_id'     => 1,
             'description' => 'Hello',
+            'start_date' => '2023-01-31 08:00 AN',
+            'end_date' => '2023-02-31 08:00 PN',
         ]);
 
         $this->assertDatabaseCount('programs', $totalprograms + 1);
