@@ -1,0 +1,563 @@
+{
+	"info": {
+		"_postman_id": "ef3f05b8-01ea-4cff-88bb-581f795a3d51",
+		"name": "Secuna",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Program",
+			"item": [
+				{
+					"name": "Get All Programs (Public)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/programs/view/all?perPage=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"programs",
+								"view",
+								"all"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Programs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}/api/programs/view/search?search=Program 1 Description",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"programs",
+								"view",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Program 1 Description"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "secuna.admin@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Programs (Auth)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/programs/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"programs",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Test to create",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Test to create desc",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2023-01-27 12:00 PM",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2023-02-27 12:00 PM",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/programs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"programs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Program By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/programs/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"programs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Inupdate ko",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/programs/103?title=dsadsadsa2321321",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"programs",
+								"103"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "dsadsadsa2321321"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/programs/103",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"programs",
+								"103"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Program Report",
+			"item": [
+				{
+					"name": "Get All Program Reports",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/reports/view/all",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"view",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Program Reports",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/reports/view/search",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"view",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Program Reports",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/reports/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Program Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/reports/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Program Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/reports/11?title=dsadsadsa2321321&program_id=1&request_status=1&severity=4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"11"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "dsadsadsa2321321"
+								},
+								{
+									"key": "program_id",
+									"value": "1"
+								},
+								{
+									"key": "request_status",
+									"value": "1",
+									"description": "(0=None, 1=Critical, 2=High, 3=Medium, 4=Low)"
+								},
+								{
+									"key": "severity",
+									"value": "4",
+									"description": "(0=New, 1=Resolved)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a New Program Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "program_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "dsadsadsadsa",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "dasdsad2321321",
+									"type": "text"
+								},
+								{
+									"key": "severity",
+									"value": "1",
+									"description": "(0=None, 1=Critical, 2=High, 3=Medium, 4=Low)",
+									"type": "text"
+								},
+								{
+									"key": "request_status",
+									"value": "0",
+									"description": "(0=New, 1=Resolved)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/reports",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Program Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/reports/103",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"103"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
