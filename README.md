@@ -44,18 +44,13 @@ Configure Database, Environment, JWT Token (**Set the variables in .env**)
     #--------------------------------------------------------------------
     # DATABASE
     #--------------------------------------------------------------------
-    
-    database.default.hostname = db
-    database.default.database = secuna_exam
-    database.default.username = root
-    database.default.password = root
-    database.default.DBDriver = MySQLi
 
-    #--------------------------------------------------------------------
-    # ENVIRONMENT
-    #--------------------------------------------------------------------
-    
-    CI_ENVIRONMENT = development
+    DB_CONNECTION=mysql
+    DB_HOST=db
+    DB_PORT=3306
+    DB_DATABASE=secuna_exam
+    DB_USERNAME=root
+    DB_PASSWORD=root
 
     #--------------------------------------------------------------------
     # JWT
