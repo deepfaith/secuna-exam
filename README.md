@@ -96,7 +96,7 @@ You can also import the postman collection used in this project thru this [link]
 
 ## Dependencies
 
-- [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger) - A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519.
+- [L5-Swagger](https://github.com/DarkaOnLine/L5-Swagger) - OpenApi or Swagger Specification for your Laravel project made easy.
 - [JWT Auth](https://github.com/tymondesigns/jwt-auth) - A simple library to encode and decode JSON Web Tokens (JWT) in PHP, conforming to RFC 7519.
 
 
